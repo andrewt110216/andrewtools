@@ -1,0 +1,11 @@
+# VS Code files
+.vscode/
+
+# Virtual environment files
+venv/
+
+# Pytest cache
+.pytest_cache/
+
+# Distribution files
+dist/
