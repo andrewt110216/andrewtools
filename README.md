@@ -33,8 +33,8 @@ for i in range(iterations):
     print_progress_bar(i, iterations, width=10, prefix="Progress")
     time.sleep(0.5)
 
-# Printed to standard out:
+# Printed to command line:
 Progress | ***------- | 30%  <- % and progress bar update in-place while loop runs
 ```
 
-- Note: this function will not play well if you're loop includes other print statements.
+- Warning: this function will not play well if the loop includes other print statements. The progress bar may get printed on a separate line for each iteration, which may not be desirable.
