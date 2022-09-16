@@ -4,7 +4,7 @@
 
 # Quick Start
 
-## Support Python Versions
+## Supported Python Versions
 
 Python 3.8+
 
@@ -19,11 +19,10 @@ py -m pip install andrewtools
 ```
 
 ## Examples
-----
 
 ## Progress Bar
 
-Print a progress bar for a loop in-place to the standard output
+If you are working on a program that uses a loop that takes a significant amount of time to execute, it can be nice to follow the progress of your program while it runs. Use `print_progress_bar` to visualize the progress via the command line.
 
 ```
 import time
@@ -35,5 +34,7 @@ for i in range(iterations):
     time.sleep(0.5)
 
 # Printed to standard out:
-Progress | ***------- | 30%
+Progress | ***------- | 30%  <- % and progress bar update in-place while loop runs
 ```
+
+- Note: this function will not play well if you're loop includes other print statements.
