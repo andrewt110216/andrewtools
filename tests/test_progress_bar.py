@@ -6,7 +6,7 @@ from andrewtools import progress_bar
 def test_main(capfd):
     total = 10
     for iteration in range(total):
-        progress_bar(iteration, total, width=10, prefix="Progress")
+        progress_bar(iteration, total, width=10, label="Progress")
         out, err = capfd.readouterr()
         percent = (iteration + 1) / total * 100
         bar = "*" * (iteration + 1) + "-" * (total - iteration - 1)
@@ -20,7 +20,7 @@ def test_user_error_iteration_too_large(capfd):
     total = 10
     for iteration in range(total):
         # user mistakenly allows iteration to become greater than total
-        progress_bar(iteration + 2, total, width=10, prefix="Progress")
+        progress_bar(iteration + 2, total, width=10, label="Progress")
         out, err = capfd.readouterr()
         # check for error message when `iteration` >= total
         if (iteration + 2) >= total:
