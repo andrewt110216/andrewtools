@@ -12,8 +12,9 @@ def test_main(capfd):
         bar = "*" * (iteration + 1) + "-" * (total - iteration - 1)
         expected = f"\rProgress |{bar}| {percent:.1f}%\r"
         if iteration == total - 1:
-            expected += '\n'
+            expected += "\n"
         assert expected == out
+
 
 def test_user_error_iteration_too_large(capfd):
     total = 10
@@ -33,6 +34,7 @@ def test_user_error_iteration_too_large(capfd):
             else:
                 assert percent <= 100
 
+
 def test_invalid_argument_type():
     with pytest.raises(Exception) as e:
         iterations = 10
@@ -40,6 +42,7 @@ def test_invalid_argument_type():
             print_progress_bar("Progress", i, iterations, 10)
             pass
     assert e.type == ValueError or e.type == TypeError
+
 
 def test_invalid_width_values():
     # width too large

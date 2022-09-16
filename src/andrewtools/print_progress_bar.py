@@ -62,4 +62,4 @@ if __name__ == "__main__":
     iterations = 39
     for i in range(iterations):
         print_progress_bar(i, iterations, width=10, prefix="Progress")
-        time.sleep(.1)
+        time.sleep(0.1)
