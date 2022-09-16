@@ -21,7 +21,7 @@ pip install andrewtools
 py -m pip install andrewtools
 ```
 
-## Examples
+# Examples
 
 ## Progress Bar
 
