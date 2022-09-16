@@ -8,7 +8,7 @@ include = ["andrewtools*", "utils*"]
 
 [project]
 name = "andrewtools"
-version = "0.0.1"
+version = "0.0.2"
 description = "An assortment of handy Python tools made by someone named Andrew"
 authors = [{ name = "Andrew Tracey", email = "act.project.alpha@gmail.com" }]
 license = { file = "LICENSE.md" }

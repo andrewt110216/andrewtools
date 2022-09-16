@@ -1,5 +1,12 @@
 # Changelog
 
+<!-- Placeholder For Next Release -->
+## v0.0.2 (09/15/2022)
+
+### Features
+
+- Shortened name of `print_progress_bar` to `progress_bar`
+
 ## v0.0.1 (09/15/2022)
 
 - First release of `andrewtools`

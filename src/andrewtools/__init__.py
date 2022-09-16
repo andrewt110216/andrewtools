@@ -1,4 +1,4 @@
 # shortens import statement from:
-#  - `from andrewtools.print_progress_bar import print_progress_bar` to
-#  - `from andrewtools import print_progress_bar`
-from .print_progress_bar import print_progress_bar
+#  - `from andrewtools.progress_bar import progress_bar` to
+#  - `from andrewtools import progress_bar`
+from .progress_bar import progress_bar

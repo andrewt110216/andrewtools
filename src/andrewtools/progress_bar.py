@@ -2,8 +2,8 @@
 from utils.validate_input import validate_type
 
 
-def print_progress_bar(
-    iteration: int, total: int, width: int = 100, prefix: str = ""
+def progress_bar(
+    iteration: int, total: int, width: int = 100, label: str = ""
 ) -> None:
     """
     Usage: Call as the first line inside of a loop.
@@ -14,14 +14,14 @@ def print_progress_bar(
     :param int iteration: the current iteration, 0-indexed
     :param int total: the total number of iterations, 1-indexed
     :param int width: the inner width of the progress bar itself [10-100]
-    :param str prefix: a message to be printed on the left of the status bar
+    :param str label: label is printed on the left side of the progress bar
     """
 
     # Validate input types
     iteration = validate_type(iteration, int)
     total = validate_type(total, int)
     width = validate_type(width, int)
-    prefix = validate_type(prefix, str)
+    label = validate_type(label, str)
 
     # Make sure width is in bounds
     if width < 10 or width > 100:
@@ -47,7 +47,7 @@ def print_progress_bar(
     percent = (iteration + 1) / total
     complete = int(width * percent)
     bar = "*" * complete + "-" * (width - complete)
-    print(f"\r{prefix} |{bar}| {percent * 100:.1f}%", end="\r")
+    print(f"\r{label} |{bar}| {percent * 100:.1f}%", end="\r")
 
     # Final iteration ends with newline character
     if percent == 1:
@@ -61,5 +61,5 @@ if __name__ == "__main__":
 
     iterations = 39
     for i in range(iterations):
-        print_progress_bar(i, iterations, width=10, prefix="Progress")
+        progress_bar(i, iterations, width=10, label="Progress")
         time.sleep(0.1)

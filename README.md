@@ -25,15 +25,15 @@ py -m pip install andrewtools
 
 ## Progress Bar
 
-If you are working on a program that uses a loop that takes a significant amount of time to execute, it can be nice to follow the progress of your program while it runs. Use `print_progress_bar` to visualize the progress via the command line.
+If you are working on a program that uses a loop that takes a significant amount of time to execute, it can be nice to follow the progress of your program while it runs. Use `progress_bar` to visualize the progress via the command line.
 
 ```
 import time
-from andrewtools import print_progress_bar
+from andrewtools import progress_bar
 
 iterations = 10
 for i in range(iterations):
-    print_progress_bar(i, iterations, width=10, prefix="Progress")
+    progress_bar(i, iterations, width=10, prefix="Progress")
     time.sleep(0.5)
 
 # Printed to command line:
