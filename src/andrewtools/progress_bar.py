@@ -2,9 +2,7 @@
 from utils.validate_input import validate_type
 
 
-def progress_bar(
-    iteration: int, total: int, width: int = 100, label: str = ""
-) -> None:
+def progress_bar(iteration: int, total: int, width: int = 100, label: str = "") -> None:
     """
     Usage: Call as the first line inside of a loop.
 
