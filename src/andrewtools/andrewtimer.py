@@ -10,7 +10,7 @@ class AndrewTimer:
         self.lap_start = self.start_time
         self.laps = []
 
-    def elapsed(self, units='s', format=False):
+    def elapsed(self, units="s", format=False):
         """
         Return the total elapsed time
 
@@ -37,7 +37,7 @@ class AndrewTimer:
         self.laps.append(now - self.lap_start)
         self.lap_start = now
 
-    def average(self, units='s', format=False):
+    def average(self, units="s", format=False):
         """
         Return average lap time
 
@@ -61,7 +61,7 @@ class AndrewTimer:
     def get_laps(self):
         return self.laps
 
-    def last_lap(self, units='s', format=False):
+    def last_lap(self, units="s", format=False):
         """
         Return the time of the last lap
 
@@ -83,19 +83,20 @@ class AndrewTimer:
         return last_lap
 
     def _convert(self, time, units):
-        if units == 's':
+        if units == "s":
             return time
-        elif units == 'ms':
+        elif units == "ms":
             return time * 1_000
-        elif units == 'ns':
+        elif units == "ns":
             return time * 1_000_000
-        elif units == 'm':
+        elif units == "m":
             return time / 60
         else:
             raise ValueError(f"Units must be 'm', 's', 'ms', or 'ns', not {units}")
 
     def _format(self, time, units):
         return f"{time:,.3f}{units}"
+
 
 if __name__ == "__main__":
 
@@ -107,6 +108,6 @@ if __name__ == "__main__":
         end = f"(Last {t.last_lap(format=True)}) (Total: {t.elapsed(format=True)})"
         progress_bar(i, 10, width=10, label="Progress", end=end)
 
-    total_time = t.elapsed('s', format=True)
-    average_time = t.average('s', format=True)
+    total_time = t.elapsed("s", format=True)
+    average_time = t.average("s", format=True)
     print(f"Total: {total_time}, Average: {average_time}")  # approx. 5.000s 0.500s
