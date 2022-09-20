@@ -1,20 +1,34 @@
 import pytest
 import re
 from andrewtools import progress_bar
+from andrewtools import AndrewTimer
 
 
 def test_main(capfd):
     total = 10
     for iteration in range(total):
-        progress_bar(iteration, total, width=10, label="Progress")
-        out, err = capfd.readouterr()
         percent = (iteration + 1) / total * 100
         bar = "*" * (iteration + 1) + "-" * (total - iteration - 1)
-        expected = f"\rProgress |{bar}| {percent:.1f}%\r"
+        expected = f"\rProgress |{bar}| {percent:.1f}% \r"
         if iteration == total - 1:
             expected += "\n"
+        progress_bar(iteration, total, width=10, label="Progress")
+        out, err = capfd.readouterr()
         assert expected == out
 
+def test_main_with_end(capfd):
+    total = 10
+    t = AndrewTimer()
+    for iteration in range(total):
+        percent = (iteration + 1) / total * 100
+        bar = "*" * (iteration + 1) + "-" * (total - iteration - 1)
+        end = t.elapsed('s', True)
+        expected = f"\rProgress |{bar}| {percent:.1f}% {end}\r"
+        if iteration == total - 1:
+            expected += "\n"
+        progress_bar(iteration, total, width=10, label="Progress", end=end)
+        out, err = capfd.readouterr()
+        assert expected == out
 
 def test_user_error_iteration_too_large(capfd):
     total = 10
@@ -34,7 +48,6 @@ def test_user_error_iteration_too_large(capfd):
             else:
                 assert percent <= 100
 
-
 def test_invalid_argument_type():
     with pytest.raises(Exception) as e:
         iterations = 10
@@ -42,7 +55,6 @@ def test_invalid_argument_type():
             progress_bar("Progress", i, iterations, 10)
             pass
     assert e.type == ValueError or e.type == TypeError
-
 
 def test_invalid_width_values():
     # width too large

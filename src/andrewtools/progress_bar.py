@@ -2,9 +2,9 @@
 from utils.validate_input import validate_type
 
 
-def progress_bar(iteration: int, total: int, width: int = 100, label: str = "") -> None:
+def progress_bar(iteration: int, total: int, width: int = 100, label: str = "", end: str = "") -> None:
     """
-    Usage: Call as the first line inside of a loop.
+    Usage: Call as the last line inside of a loop.
 
     Note that the progress bar will not play well with your code if there are
     other print statements within the same loop.
@@ -20,6 +20,7 @@ def progress_bar(iteration: int, total: int, width: int = 100, label: str = "") 
     total = validate_type(total, int)
     width = validate_type(width, int)
     label = validate_type(label, str)
+    end = validate_type(end, str)
 
     # Make sure width is in bounds
     if width < 10 or width > 100:
@@ -45,7 +46,7 @@ def progress_bar(iteration: int, total: int, width: int = 100, label: str = "") 
     percent = (iteration + 1) / total
     complete = int(width * percent)
     bar = "*" * complete + "-" * (width - complete)
-    print(f"\r{label} |{bar}| {percent * 100:.1f}%", end="\r")
+    print(f"\r{label} |{bar}| {percent * 100:.1f}% {end}", end="\r")
 
     # Final iteration ends with newline character
     if percent == 1:
@@ -59,5 +60,5 @@ if __name__ == "__main__":
 
     iterations = 39
     for i in range(iterations):
-        progress_bar(i, iterations, width=10, label="Progress")
         time.sleep(0.1)
+        progress_bar(i, iterations, width=10, label="Progress")
