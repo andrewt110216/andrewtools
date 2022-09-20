@@ -8,6 +8,7 @@ assignees: andrewt110216
 ---
 
 - [ ] Update version in pyproject.toml
+- [ ] Update README badge
 - [ ] Update CHANGELOG
 - [ ] Update dist files: `python3 -m build`
 - [ ] Publish to TestPyPI: `twine upload -r testpypi dist/*`

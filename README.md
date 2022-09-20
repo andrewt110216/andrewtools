@@ -33,8 +33,8 @@ from andrewtools import progress_bar
 
 iterations = 10
 for i in range(iterations):
-    progress_bar(i, iterations, width=10, prefix="Progress")
     time.sleep(0.5)
+    progress_bar(i, iterations, width=10, prefix="Progress")
 
 # Printed to command line:
 Progress | ***------- | 30%  <- % and progress bar update in-place while loop runs
