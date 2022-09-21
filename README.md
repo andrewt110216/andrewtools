@@ -41,6 +41,7 @@ Progress | ***------- | 30%  <- % and progress bar update in-place while loop ru
 ```
 
 - Warning: this function will not play well if the loop includes other print statements. The progress bar may get printed on a separate line for each iteration, which may not be desirable.
+- Note: in the case of a constant runtime per iteration, the progress bar provides a good estimate of the relative amount of execution *time* remaining. Be aware that in the case of variable runtimes per iteration (e.g. if there is an inner loop with a varying workload), the progress bar is *not* a good estimate of the remaining execution time. It simply tracks the progress through the *number* of iterations.
 
 ## AndrewTimer
 

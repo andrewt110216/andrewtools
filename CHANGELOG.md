@@ -3,6 +3,10 @@
 <!-- Placeholder For Next Release -->
 ## v0.1.1 (TBD)
 
+### Features
+
+- TODO: added optional integration of `AndrewTimer` into `progress_bar`
+
 ## v0.1.0 (09/19/2022)
 
 ### Features
