@@ -1,7 +1,7 @@
 """An easy-to-use timer"""
 import time
 from andrewtools import progress_bar
-from utils.validate_input import validate_type
+from andrewtools.utils import validate_type
 
 
 class AndrewTimer:

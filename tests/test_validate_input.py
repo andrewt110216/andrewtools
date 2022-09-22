@@ -1,5 +1,5 @@
 import pytest
-from utils.validate_input import validate_type
+from andrewtools.utils import validate_type
 
 
 # Example function

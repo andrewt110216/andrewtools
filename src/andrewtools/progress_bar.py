@@ -1,5 +1,5 @@
 """Displays the progress of a loop with a command line progress bar"""
-from utils.validate_input import validate_type
+from andrewtools.utils import validate_type
 
 
 def progress_bar(
