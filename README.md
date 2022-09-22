@@ -1,6 +1,6 @@
 # About
 <!-- UPDATE VERSION IN BADGE MANUALLY -->
-![PyPI Version](https://img.shields.io/badge/pypi-v0.1.0-orange)
+![PyPI Version](https://img.shields.io/badge/pypi-v0.1.1-orange)
 ![Build](https://img.shields.io/github/workflow/status/andrewt110216/andrewtools/Tests?style=plastic)
 
 `andrewtools` is an assortment of handy Python tools made by someone named Andrew.
