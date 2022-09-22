@@ -1,7 +1,13 @@
 # Changelog
 
 <!-- Placeholder For Next Release -->
-## v0.1.1 (TBD)
+<!-- ## v0.1.1 (TBD) -->
+
+## v0.1.1 (09/22/2022)
+
+### Fix
+
+- Moved utils package inside of andrewtools package for namespacing reasons
 
 ### Features
 
